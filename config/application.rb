@@ -19,7 +19,8 @@ end
 module Scrapgallery
   class Application < Rails::Application
     # Heroku requires this to make deployments work.
-config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = false
+
     Mongoid.logger.level = Logger::DEBUG
     Moped.logger.level = Logger::DEBUG
 
