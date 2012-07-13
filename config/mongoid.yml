@@ -1,0 +1,23 @@
+development:
+  sessions:
+    default:
+      database: scrapgallery_development
+      hosts:
+        - localhost:27017
+
+test:
+  sessions:
+    default:
+      database: scrapgallery_test
+      hosts:
+        - localhost:27017
+
+<% mongo_uri = URI.parse(ENV['MONGOLAB_URI']) %>
+test:
+  sessions:
+    default:
+      username: <%= mongo_uri.user %>
+      password: <%= mongo_uri.password %>
+      database: <%= mongo_uri.path[1..-1] %>
+      hosts:
+        - <%= "#{mongo_uri.host}:#{mongo_uri.port}" %>
