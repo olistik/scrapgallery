@@ -1,4 +1,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require_tree .
+//= require vendors/jquery.transloadit2
+//= require home

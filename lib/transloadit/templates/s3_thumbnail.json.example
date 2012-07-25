@@ -1,0 +1,22 @@
+// this is what the template on your Transloadit account will approximately look like:
+{
+  "steps": {
+    "resize_to_75": {
+      "robot": "/image/resize",
+      "width": 75,
+      "height": 75
+    },
+    "store": {
+      "robot": "/s3/store",
+      "use": ["resize_to_75"],
+      "key": "PUT YOUR AMAZON S3 ACCESS KEY ID HERE",
+      "secret": "PUT YOUR AMAZON S3 SECRET ACCESS KEY HERE",
+      "bucket": "PUT THE NAME OF YOUR AMAZON S3 BUCKET HERE"
+    }
+  }
+}
+
+// and this is the template you'll have to store in this directory, referencing the remote template id:
+{
+  "template_id": "PUT THE REMOTE TEMPLATE ID HERE"
+}

@@ -1,2 +1,10 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+= form_tag Transloadit::api_url, id: 'upload', multipart: true, method: 'post', authenticity_token: false do
+  = hidden_field_tag :params, @template.to_json
+  = hidden_field_tag :signature, @template.signature
+  = file_field_tag :my_file
+  = submit_tag 'Upload'
+
+#progress
+
+%ul#results
+
